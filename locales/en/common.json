@@ -1,0 +1,12 @@
+{
+  "home": "home",
+  "sections": {
+    "writers": "writers sections",
+    "images": "images sections",
+    "coders": "developer sections"
+  },
+  "auth": {
+    "login": "login",
+    "logout": "signout"
+  }
+}
