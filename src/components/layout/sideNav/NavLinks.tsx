@@ -19,7 +19,11 @@ export function NavLinks({ active }: { active: string }) {
         >
           <Button
             color={'gray.200'}
-            w='200px'
+            w='220px'
+            _hover={{
+              color: 'black',
+              bg: 'white'
+            }}
             isActive={link.path === active}
             colorScheme={link.path === active ? 'blackAlpha' : 'gray'}
             variant={link.path === active ? 'solid' : 'ghost'}
