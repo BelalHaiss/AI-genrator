@@ -1,14 +1,15 @@
-import { SectionNav } from '@/components/sectionNav/SectionNav';
-import { Flex } from '@chakra-ui/react';
+import { CardsWrapper } from '@/components/cards/CardsWrapper';
+import { getPageCards } from '@/components/cards/util/text.card.util';
+import { TextCardPaths } from '@/types/card';
 import { useRouter } from 'next/router';
+import { writeLayout } from '.';
 
-export function SectionType() {
-  const { query } = useRouter();
-
-  return (
-    <>
-      <SectionNav categories={query.type} />
-      <Flex wrap='wrap' p='2' layerStyle={'flexCenter'}></Flex>
-    </>
-  );
+function Page() {
+  const { asPath } = useRouter();
+  const cards = getPageCards(asPath as TextCardPaths);
+  return <CardsWrapper cards={cards} />;
 }
+
+Page.getLayout = writeLayout;
+
+export default Page;

@@ -26,3 +26,10 @@ body {
 .main {
   height: calc(100vh - var(--top-nav-height));
 }
+
+.radius-border {
+  /* background: linear-gradient(270deg, #151723, #23273a); */
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background: #f7fafc;
+}

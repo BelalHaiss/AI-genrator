@@ -10,20 +10,28 @@ type Props = {
 export function SectionNav({ categories }: Props) {
   const { t } = useTranslation('common');
 
-  const { query, replace } = useRouter();
+  const { push, asPath } = useRouter();
+  const isActivePath = (currentPath: string) => {
+    const mainPath = '/write';
+    if (currentPath === mainPath && asPath !== currentPath) return false;
+    return asPath.includes(currentPath);
+  };
+
   return (
-    <Flex gap='1' w='100%' boxShadow={'lg'} borderTopRadius={'lg'}>
-      {categories.map((section) => (
-        <Button
-          onClick={() => replace(section.link)}
-          isActive={query.type === section.label}
-          colorScheme={query.type === section.label ? 'blackAlpha' : 'gray'}
-          variant={query.type === section.label ? 'solid' : 'ghost'}
-          key={section.link}
-        >
-          {t(section.label)}
-        </Button>
-      ))}
+    <Flex bg='gray.800'>
+      <Flex gap='1' w='full' p='3' className='radius-border' boxShadow={'lg'}>
+        {categories.map((section) => (
+          <Button
+            onClick={() => push(section.link)}
+            isActive={isActivePath(section.link)}
+            colorScheme={isActivePath(section.link) ? 'blackAlpha' : 'gray'}
+            variant={isActivePath(section.link) ? 'solid' : 'ghost'}
+            key={section.link}
+          >
+            {t(section.label)}
+          </Button>
+        ))}
+      </Flex>
     </Flex>
   );
 }

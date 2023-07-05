@@ -3,5 +3,6 @@ module.exports = {
   defaultLocale: 'ar',
   pages: {
     '*': ['common']
-  }
+  },
+  logger: () => undefined
 };

@@ -9,6 +9,11 @@ export function NavLinks({ active }: { active: string }) {
 
   const links = useMemo(() => navLinks, []);
   const router = useRouter();
+  const isActivePath = (myNavPath: string) => {
+    const NotHomePage = myNavPath === '/' && active.length > 2;
+    if (NotHomePage) return;
+    return active.includes(myNavPath);
+  };
   return (
     <Flex flexDir='column' alignItems='center' gap='2'>
       {links.map((link) => (
@@ -24,9 +29,9 @@ export function NavLinks({ active }: { active: string }) {
               color: 'black',
               bg: 'white'
             }}
-            isActive={link.path === active}
-            colorScheme={link.path === active ? 'blackAlpha' : 'gray'}
-            variant={link.path === active ? 'solid' : 'ghost'}
+            isActive={isActivePath(link.path)}
+            colorScheme={isActivePath(link.path) ? 'blackAlpha' : 'gray'}
+            variant={isActivePath(link.path) ? 'solid' : 'ghost'}
           >
             {t(link.label)}
           </Button>

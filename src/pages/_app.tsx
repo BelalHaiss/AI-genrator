@@ -8,79 +8,28 @@ import {
   IconButton
 } from '@chakra-ui/react';
 import { theme } from '@/utils/theme';
-import SideNav from '@/components/layout/sideNav/SideNav';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import rtl from 'stylis-plugin-rtl';
 import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
-import { useDimension } from '@/hooks/useDimension';
-import { SIDE_NAV_IS_OPEN_ON, SIDE_NAV_WIDTH } from '@/utils/statics';
-import useTranslation from 'next-translate/useTranslation';
-import { RxHamburgerMenu } from 'react-icons/rx';
+import { NextPage } from 'next';
+import { ReactElement, ReactNode } from 'react';
+import { Layout } from '@/components/layout/AppLayout';
 
-export default function App({ Component, pageProps }: AppProps) {
-  const { width } = useDimension();
-  const [isOpen, setIsOpen] = useState(true);
-  const leftBody = useRef<HTMLDivElement>(null);
-  const { t, lang } = useTranslation('common');
-  useEffect(() => {
-    if (width >= SIDE_NAV_IS_OPEN_ON) {
-      setIsOpen(true);
-    }
-    if (width < SIDE_NAV_IS_OPEN_ON) setIsOpen(false);
-  }, [width]);
-  useEffect(() => {
-    const { className } = leftBody.current!;
-    if (isOpen && !className) leftBody.current!.className = 'main-app-maxW';
-    if (!isOpen) leftBody.current!.className = '';
-  }, [isOpen]);
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <ChakraProvider theme={theme}>
       <RtlProvider>
-        <Box w='100' position='relative' gap='1' maxH='100%' h='100vh'>
-          <SideNav isOpen={isOpen} />
-          <Box
-            h='100%'
-            bg='gray.800'
-            maxH='100%'
-            style={{
-              float: !isOpen ? 'none' : lang === 'ar' ? 'left' : 'right'
-            }}
-            ref={leftBody}
-            w='full'
-            minW={!isOpen ? '100%' : 'auto'}
-            className='main-app-maxW'
-          >
-            <Flex
-              align={'center'}
-              bg='gray.800'
-              zIndex={100}
-              h={'125px'}
-              w='100%'
-              p='2'
-            >
-              <IconButton
-                aria-label='menu'
-                onClick={() => setIsOpen(!isOpen)}
-                icon={<RxHamburgerMenu />}
-                colorScheme='whiteAlpha'
-              />
-            </Flex>
-
-            <main
-              className='main'
-              style={{
-                position: 'relative',
-                overflow: 'auto'
-              }}
-            >
-              <Flex bg='gray.200'>
-                <Component {...pageProps} />
-              </Flex>
-            </main>
-          </Box>
-        </Box>
+        <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
       </RtlProvider>
     </ChakraProvider>
   );
