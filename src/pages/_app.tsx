@@ -10,6 +10,7 @@ import {
 import { theme } from '@/utils/theme';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
+import { createStandaloneToast } from '@chakra-ui/react';
 import rtl from 'stylis-plugin-rtl';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
@@ -26,10 +27,13 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
+  const { ToastContainer } = createStandaloneToast(theme);
+
   return (
     <ChakraProvider theme={theme}>
       <RtlProvider>
         <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
+        <ToastContainer />
       </RtlProvider>
     </ChakraProvider>
   );

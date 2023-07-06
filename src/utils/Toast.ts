@@ -1,4 +1,7 @@
-import { Toast } from '@chakra-ui/toast';
+import { createStandaloneToast } from '@chakra-ui/react';
+import { theme } from './theme';
+
+const { toast: Toast } = createStandaloneToast(theme);
 
 function handleTitle(status: Status) {
   switch (status) {

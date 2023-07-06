@@ -7,10 +7,10 @@ type Props = {
 };
 
 export function Write_Header({ label }: Props) {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   return (
-    <Flex p='2' bg='gray.50' w='full' gap='1' align={'center'}>
+    <Flex p='4' bg='gray.50' w='full' gap='1' align={'center'}>
       <BackButton />
       <Text fontWeight='bold' fontSize={'xl'}>
         {t(label)}

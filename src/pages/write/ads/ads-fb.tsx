@@ -15,8 +15,8 @@ const formFields: FormField<RequestKeys>[] = [
 function Page() {
   return (
     <WriteWrapper>
-      <Write_Header label='write-article' />
-      <Write_Sandbox service='ArticleWriter' formFields={formFields} />
+      <Write_Header label='create fb ad' />
+      <Write_Sandbox service='facebookAds' formFields={formFields} />
     </WriteWrapper>
   );
 }

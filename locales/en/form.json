@@ -1,0 +1,16 @@
+{
+  "formlabel": {
+    "article": {
+      "create": " Enter the topic for your Article"
+    }
+  },
+  "fill": {
+    "fields": "Please Fill the form"
+  },
+  "select": {
+    "language": "Please select the language",
+    "tone": "How Do You Want The Caption To Sound?"
+  },
+
+  "results-counts": "How many output cards do you need? "
+}

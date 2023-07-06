@@ -2,7 +2,7 @@ module.exports = {
   locales: ['en', 'ar'],
   defaultLocale: 'ar',
   pages: {
-    '*': ['common']
+    '*': ['common', 'form']
   },
-  logger: () => undefined
+  logger: () => undefined // dev logger
 };

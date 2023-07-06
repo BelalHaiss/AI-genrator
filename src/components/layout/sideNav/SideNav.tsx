@@ -41,7 +41,7 @@ export default function SideNav({ isOpen }: Props) {
         <NavLinks active={router.pathname} />
       </Flex>
       {/* footers */}
-      <Flex flex='0' mx='1'>
+      <Flex flex='0' gap='2' align={'center'} mx='1'>
         <Avatar
           name={user?.name}
           cursor='pointer'
@@ -49,12 +49,12 @@ export default function SideNav({ isOpen }: Props) {
           onClick={() => router.replace('/profile')}
           src='https://thispersondoesnotexist.com/'
         />
-        <Text fontWeight={'bold'} fontSize='sm'>
+        <Text color={'gray.50'} fontWeight={'bold'} fontSize='sm'>
           {user?.name}
         </Text>
         <Button
           mr='auto'
-          size='sm'
+          size='xs'
           colorScheme='red'
           leftIcon={<IoLogOut fontSize='18px' />}
         >
