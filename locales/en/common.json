@@ -1,12 +1,12 @@
 {
-  "home": "home",
+  "home": "Home",
   "sections": {
-    "writers": "writers sections",
-    "images": "images sections",
-    "coders": "developer sections"
+    "writers": "Writers Sections",
+    "images": "Images Sections",
+    "coders": "Developer Sections"
   },
   "auth": {
     "login": "login",
-    "logout": "signout"
+    "logout": "logout"
   }
 }

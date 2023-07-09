@@ -10,11 +10,11 @@ export function CircleIcon({ icon }: Props) {
     <Center
       p='2'
       bg={icon.color + '.100'}
-      h='50px'
-      w='50px'
+      minH='50px'
+      minW='50px'
       borderRadius={'25px'}
     >
-      <Icon as={icon.icon} color={icon.color + '.600'} />
+      <Icon as={icon.icon} w='6' h='6' color={icon.color + '.600'} />
     </Center>
   );
 }

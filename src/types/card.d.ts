@@ -1,4 +1,5 @@
 import { IconType } from 'react-icons/lib';
+import { RequestServices } from './request';
 
 export interface BoxCard<path = string> {
   title: string;
@@ -9,6 +10,7 @@ export interface BoxCard<path = string> {
     icon: IconType;
   };
   tools?: number;
+  service?: RequestServices;
 }
 
 export interface CardPage {
@@ -18,4 +20,7 @@ export interface CardPage {
 export type TextCardPaths =
   | '/write/doc'
   | '/write/ads'
-  | '/write/emails_message';
+  | '/write/emails-message'
+  | '/write/company'
+  | '/write/seo'
+  | '/write/social';

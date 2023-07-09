@@ -8,7 +8,7 @@ type Props = {
 };
 
 export function SectionNav({ categories }: Props) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('write');
 
   const { push, asPath } = useRouter();
   const isActivePath = (currentPath: string) => {
@@ -19,9 +19,17 @@ export function SectionNav({ categories }: Props) {
 
   return (
     <Flex bg='gray.800'>
-      <Flex gap='1' w='full' p='3' className='radius-border' boxShadow={'lg'}>
+      <Flex
+        gap='2'
+        w='full'
+        p='3'
+        className='radius-border'
+        overflow={'auto'}
+        boxShadow={'lg'}
+      >
         {categories.map((section) => (
           <Button
+            minW='200px'
             onClick={() => push(section.link)}
             isActive={isActivePath(section.link)}
             colorScheme={isActivePath(section.link) ? 'blackAlpha' : 'gray'}

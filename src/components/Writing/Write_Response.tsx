@@ -9,11 +9,12 @@ type Props = {
 
 export function Write_Response({ res }: Props) {
   const { t } = useTranslation('form');
+  if (!res) return;
   return (
     <Flex flexDir={'column'} p='4' align={'center'} w='full' h='full' gap='1'>
       {!res && <Text>{t('fill.fields')}</Text>}
 
-      {res === 'loading' && <Spinner />}
+      {res === 'loading' && <Spinner w='100px' h='100px' />}
 
       <Flex flexDir={'column'} gap='4' w='full'>
         {typeof res === 'object' &&

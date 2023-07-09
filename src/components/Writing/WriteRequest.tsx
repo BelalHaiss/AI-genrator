@@ -29,6 +29,7 @@ type FooterProps = {
 export function WriteRequest({ setRes, formFields, service }: Props) {
   const { t } = useTranslation('form');
   const [state, setState] = useState(() => getInitial_state(service));
+  const [isLoading, setLoading] = useState(false);
   const handleChange = <T extends keyof RequestBody>(
     name: T,
     value: RequestBody[T]
@@ -40,6 +41,7 @@ export function WriteRequest({ setRes, formFields, service }: Props) {
       ToastUtil(t('fill.fields'));
       return;
     }
+    setLoading(true);
     setRes('loading');
     const res = await fetcher({
       url: '/chat',
@@ -48,6 +50,7 @@ export function WriteRequest({ setRes, formFields, service }: Props) {
         data: state
       }
     });
+    setLoading(false);
     setRes(res);
   };
   return (
@@ -76,6 +79,7 @@ export function WriteRequest({ setRes, formFields, service }: Props) {
         borderRadius={'full'}
         colorScheme='teal'
         onClick={handleSubmit}
+        isLoading={isLoading}
       >
         {t('generate')}
       </Button>

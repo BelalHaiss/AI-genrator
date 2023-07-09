@@ -7,6 +7,11 @@
   "fill": {
     "fields": "Please Fill the form"
   },
+
+  "placeholder": {
+    "tone": "Select Tone ",
+    "language": "Select Language"
+  },
   "select": {
     "language": "Please select the language",
     "tone": "How Do You Want The Caption To Sound?"

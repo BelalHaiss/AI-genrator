@@ -9,24 +9,24 @@ type Props = {
 };
 
 export function BoxCard({ item }: Props) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('write');
   const router = useRouter();
   return (
     <Flex
       py='2'
       px='1'
-      borderRadius={'md'}
+      borderRadius={'lg'}
       bg='gray.50'
-      gap='1'
+      gap='3'
       cursor={'pointer'}
       align={'center'}
       _hover={{
         outline: '2px solid #2B6CB0'
       }}
       onClick={() => router.push(item.link)}
-      minH={'100px'}
-      boxShadow={'lg'}
-      minW={['260px', '300px', '400px']}
+      minH={'120px'}
+      boxShadow={'xl'}
+      w={['260px', '300px', '400px']}
     >
       <CircleIcon icon={item.icon} />
       {/* Text part */}
@@ -35,7 +35,7 @@ export function BoxCard({ item }: Props) {
           {t(item.title)}
         </Text>
 
-        <Text fontWeight={'light'} fontSize={'md'}>
+        <Text fontWeight={'thin'} color={'gray.500'} fontSize={'sm'}>
           {t(item.desc)}
         </Text>
       </Flex>

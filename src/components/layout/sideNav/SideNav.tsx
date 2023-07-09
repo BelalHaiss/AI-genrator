@@ -5,13 +5,14 @@ import { useStore } from '@/utils/store';
 import Image from 'next/image';
 import { NavLinks } from './NavLinks';
 import { SIDE_NAV_WIDTH } from '@/utils/statics';
+import useTranslation from 'next-translate/useTranslation';
 type Props = {
   isOpen: boolean;
 };
 export default function SideNav({ isOpen }: Props) {
   const router = useRouter();
   const user = useStore((state) => state.user);
-
+  const { t } = useTranslation('common');
   if (!isOpen) return;
   return (
     <Flex
@@ -53,12 +54,12 @@ export default function SideNav({ isOpen }: Props) {
           {user?.name}
         </Text>
         <Button
-          mr='auto'
+          ml='auto'
           size='xs'
           colorScheme='red'
           leftIcon={<IoLogOut fontSize='18px' />}
         >
-          خروج
+          {t('auth.logout')}
         </Button>
       </Flex>
     </Flex>

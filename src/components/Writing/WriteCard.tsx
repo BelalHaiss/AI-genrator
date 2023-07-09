@@ -17,7 +17,7 @@ export function WriteCard({ writeRes }: Props) {
       position={'relative'}
       layerStyle={'flexCenter'}
     >
-      <Text>{writeRes.content}</Text>
+      <Text style={{ whiteSpace: 'pre-wrap' }}> {writeRes.content}</Text>
       <Text>{writeRes.count}</Text>
     </Flex>
   );

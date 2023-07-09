@@ -1,0 +1,64 @@
+{
+  "all": "All",
+  "doc": {
+    "title": "Long Documents",
+    "desc": "Here you can find many tools that will help you getting better content",
+
+    "write-article": "Article",
+    "write-article-desc": "Improve article creation with state-of-the-art writing tech.",
+
+    "write-summary": "Summarize Text",
+    "write-summary-desc": "Summarize your text and get concise insights instantly"
+  },
+  "emails-message": {
+    "title": "Emails and messages",
+    "title-desc": "Here you can handle your all mails and messages.",
+
+    "email": "Email",
+    "email-desc": "Revolutionize the way you write emails ",
+
+    "sms": "SMS",
+    "sms-desc": "Elevate your SMS game with expert writing assistance."
+  },
+  "ads": {
+    "title": "Ads",
+    "title-desc": "You can ensure your ads stand out in search results. Craft compelling",
+
+    "fb": "Facebook Ads",
+    "fb-desc": "Automated writing for Facebook Ads with our tools",
+
+    "google": "Google Ads",
+    "google-desc": "Efficient writing for Google Ads with the power of artificial intelligence."
+  },
+
+  "company-content-writing": {
+    "title": "Company Content Writing",
+    "desc": "You'll be able to streamline your sales process, improve your online visibility.",
+
+    "productFeatures": "Product Features",
+    "productFeatures.desc": "Enhance your product's appeal with expertly crafted feature descriptions",
+
+    "companyMission": "Company Mission",
+    "companyMission-desc": "Craft a winning company mission using artificial intellagence"
+  },
+  "seo": {
+    "title": "SEO",
+    "desc": "Enhance your online visibility and attract more traffic with our expert tips and tricks.",
+
+    "keywordsgenrator": "مولد الكلمات الرئيسية",
+    "keywordsgenrator-desc": "أنشئ كلمات رئيسية فعالة لتحسين مُحسّنات محرّكات البحث الخاصة بالمحتوى الخاص بك    ",
+
+    "blogpost": "SEO مشاركة مدونة",
+    "blogpost-desc": "احصل على مشاركات المدونة التي تحتل مرتبة عالية في محركات البحث باستخدام الذكاء الاصطناعي."
+  },
+  "social": {
+    "title": "Social Media",
+    "desc": "Here you can make posts, captions all things for social media you have.",
+
+    "facebookPosts": "Facebook Status",
+    "facebookPosts-desc": "Facebook status writing for effortless social media presence.",
+
+    "linkedinPosts": "LinkedIn Post",
+    "linkedinPosts-desc": "Craft compelling LinkedIn posts that drive engagement"
+  }
+}
