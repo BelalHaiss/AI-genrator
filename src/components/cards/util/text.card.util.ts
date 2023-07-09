@@ -124,7 +124,15 @@ export const docsCards: BoxCard[] = [
       color: 'purple',
       icon: MdArticle
     },
-    service: 'ArticleWriter'
+    service: 'ArticleWriter',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.article.create',
+        type: 'text',
+        value: ''
+      }
+    ]
   },
   {
     title: 'doc.write-summary',
@@ -135,7 +143,15 @@ export const docsCards: BoxCard[] = [
       color: 'purple',
       icon: MdShortText
     },
-    service: 'summarize2ndGrader'
+    service: 'summarize2ndGrader',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.article.summarize',
+        type: 'textarea',
+        value: ''
+      }
+    ]
   }
 ];
 
@@ -151,7 +167,15 @@ export const mailsCards: BoxCard[] = [
       color: 'blue',
       icon: RiMailCheckFill
     },
-    service: 'email'
+    service: 'email',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.email.create',
+        type: 'text',
+        value: ''
+      }
+    ]
   },
   {
     title: 'emails-message.sms',
@@ -161,7 +185,16 @@ export const mailsCards: BoxCard[] = [
     icon: {
       color: 'blue',
       icon: MdShortText
-    }
+    },
+    service: 'SMSNotifications',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.sms.create',
+        type: 'text',
+        value: ''
+      }
+    ]
   }
 ];
 
@@ -177,7 +210,16 @@ export const adsCards: BoxCard[] = [
     icon: {
       color: 'pink',
       icon: BsFacebook
-    }
+    },
+    service: 'facebookAds',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.fb.create',
+        type: 'text',
+        value: ''
+      }
+    ]
   },
   {
     title: 'ads.google',
@@ -187,7 +229,16 @@ export const adsCards: BoxCard[] = [
     icon: {
       color: 'pink',
       icon: BsGoogle
-    }
+    },
+    service: 'googleAdsDescriptions',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.linkedin.create',
+        type: 'text',
+        value: ''
+      }
+    ]
   }
 ];
 
@@ -203,7 +254,15 @@ export const companyCards: BoxCard[] = [
       color: 'red',
       icon: MdGppGood
     },
-    service: 'productFeatures'
+    service: 'productFeatures',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.company.productFeatures-create',
+        type: 'text',
+        value: ''
+      }
+    ]
   },
   {
     title: 'company-content-writing.companyMission',
@@ -214,7 +273,15 @@ export const companyCards: BoxCard[] = [
       color: 'red',
       icon: BiTask
     },
-    service: 'companyMission'
+    service: 'companyMission',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.company.companyMission-create',
+        type: 'text',
+        value: ''
+      }
+    ]
   }
 ];
 
@@ -229,7 +296,16 @@ export const seoCards: BoxCard[] = [
     icon: {
       color: 'yellow',
       icon: BsSearchHeartFill
-    }
+    },
+    service: 'rewriteWithKeywords',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.seo.keywordgenrator-create',
+        type: 'text',
+        value: ''
+      }
+    ]
   },
   {
     title: 'seo.blogpost',
@@ -239,7 +315,16 @@ export const seoCards: BoxCard[] = [
     icon: {
       color: 'yellow',
       icon: FaMicroblog
-    }
+    },
+    service: 'blogIdea',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.seo.blogpost-create',
+        type: 'text',
+        value: ''
+      }
+    ]
   }
 ];
 
@@ -255,7 +340,15 @@ export const socialCards: BoxCard[] = [
       color: 'blue',
       icon: BsFacebook
     },
-    service: 'facebookPosts'
+    service: 'facebookPosts',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.social.fb-create',
+        type: 'text',
+        value: ''
+      }
+    ]
   },
   {
     title: 'social.linkedinPosts',
@@ -266,6 +359,14 @@ export const socialCards: BoxCard[] = [
       color: 'blue',
       icon: BsLinkedin
     },
-    service: 'linkedinPosts'
+    service: 'linkedinPosts',
+    formFields: [
+      {
+        name: 'description',
+        label: 'formlabel.social.linkedin-create',
+        type: 'text',
+        value: ''
+      }
+    ]
   }
 ];

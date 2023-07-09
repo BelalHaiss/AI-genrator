@@ -5,7 +5,8 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
-  Select
+  Select,
+  Textarea
 } from '@chakra-ui/react';
 import useTranslation from 'next-translate/useTranslation';
 import { ChangeEvent } from 'react';
@@ -31,7 +32,7 @@ export function CustomFormControl({
 }: Props) {
   const { t } = useTranslation('form');
   const normalOnChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { value } = e.target;
     if (!value) return;
@@ -77,6 +78,25 @@ export function CustomFormControl({
         </Select>
       </FormControl>
     );
+  } else if (type === 'textarea') {
+    <FormControl w={width ?? '90%'} isInvalid={isError ?? false}>
+      <FormLabel fontWeight={'bold'} htmlFor={name}>
+        {t(label)}
+      </FormLabel>
+      <Flex position={'relative'}>
+        <Textarea
+          id={name}
+          name={name}
+          color={'black'}
+          value={value as string}
+          bg={'gray.100'}
+          placeholder={t(placeholder ?? '')}
+          onChange={normalOnChange}
+        />
+      </Flex>
+
+      {isError && <FormErrorMessage>{errorText}</FormErrorMessage>}
+    </FormControl>;
   }
   return null;
 }

@@ -1,5 +1,6 @@
 import { IconType } from 'react-icons/lib';
-import { RequestServices } from './request';
+import { RequestKeys, RequestServices } from './request';
+import { FormField } from './FormControl';
 
 export interface BoxCard<path = string> {
   title: string;
@@ -11,6 +12,7 @@ export interface BoxCard<path = string> {
   };
   tools?: number;
   service?: RequestServices;
+  formFields?: FormField<RequestKeys>[];
 }
 
 export interface CardPage {

@@ -12,7 +12,7 @@
   },
   "emails-message": {
     "title": "Emails and messages",
-    "title-desc": "Here you can handle your all mails and messages.",
+    "desc": "Here you can handle your all mails and messages.",
 
     "email": "Email",
     "email-desc": "Revolutionize the way you write emails ",
@@ -22,7 +22,7 @@
   },
   "ads": {
     "title": "Ads",
-    "title-desc": "You can ensure your ads stand out in search results. Craft compelling",
+    "desc": "You can ensure your ads stand out in search results. Craft compelling",
 
     "fb": "Facebook Ads",
     "fb-desc": "Automated writing for Facebook Ads with our tools",

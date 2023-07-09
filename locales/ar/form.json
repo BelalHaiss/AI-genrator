@@ -1,7 +1,32 @@
 {
   "formlabel": {
     "article": {
-      "create": " أكتب عنوان المدونة التي تريد كتباتها"
+      "create": " أكتب عنوان المدونة التي تريد كتباتها",
+      "summarize": "ادخل النص المراد تلخيصه"
+    },
+    "email": {
+      "create": "اكتب موضوع الايميل"
+    },
+    "sms": {
+      "create": "سياق رسالتك"
+    },
+    "fb": {
+      "create": "وصف المنتج"
+    },
+    "linkedin": {
+      "create": "وصف المنتج"
+    },
+    "company": {
+      "productFeatures-create": "وصف المنتج",
+      "companyMission-create": "وصف المنتج"
+    },
+    "seo": {
+      "keywordgenrator-create": "وصف المنتج",
+      "blogpost-create": "عنوان الموضوع"
+    },
+    "social": {
+      "fb-create": "وصف الحالة",
+      "linkedin-create": "موضوع المنشور"
     }
   },
   "fill": {

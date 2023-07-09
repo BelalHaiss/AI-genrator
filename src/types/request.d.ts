@@ -3,8 +3,10 @@ export type RequestKeys =
   | 'description'
   | 'tone'
   | 'numberOfGenerated'
-  | 'service';
+  | 'service'
+  | EmailKeys;
 
+type EmailKeys = 'from' | 'to';
 export type RequestValues =
   | Req_language
   | RequestServices
