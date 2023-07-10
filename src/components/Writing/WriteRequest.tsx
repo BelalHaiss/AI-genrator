@@ -6,7 +6,8 @@ import {
   RequestBody,
   RequestKeys,
   RequestServices,
-  RequestValues
+  RequestValues,
+  handleWriteChange
 } from '@/types/request';
 import { ToneSelect } from '../Forms/ContentTune';
 import { LanguageSelect } from '../Forms/LanguageSelect';
@@ -16,19 +17,28 @@ import { SquareRadios } from '../Forms/ResultRadio';
 import { fetcher } from '@/utils/fetcher';
 import { WriteResponse } from '@/types/response';
 import ToastUtil from '@/utils/Toast';
+import { BoxCard } from '@/types/card';
 
 type Props = {
   setRes: (res: WriteResponse | 'loading') => void;
-  formFields?: FormField<RequestKeys>[];
+  formFields?: FormField[];
   service: RequestServices;
+  CustomComponent?: BoxCard['CustomComponent'];
+  req_body?: BoxCard['req_body'];
 };
 type FooterProps = {
-  handleChange: (name: RequestKeys, value: RequestValues) => void;
+  handleChange: handleWriteChange;
 };
 
-export function WriteRequest({ setRes, formFields, service }: Props) {
+export function WriteRequest({
+  setRes,
+  formFields,
+  service,
+  req_body,
+  CustomComponent
+}: Props) {
   const { t } = useTranslation('form');
-  const [state, setState] = useState(() => getInitial_state(service));
+  const [state, setState] = useState(() => getInitial_state(service, req_body));
   const [isLoading, setLoading] = useState(false);
   const handleChange = <T extends keyof RequestBody>(
     name: T,
@@ -63,14 +73,18 @@ export function WriteRequest({ setRes, formFields, service }: Props) {
       w='full'
       h='full'
     >
-      {formFields?.map((field) => (
-        <CustomFormControl
-          key={field.name}
-          {...field}
-          value={state[field.name]}
-          onChange={handleChange}
-        />
-      ))}
+      {CustomComponent && (
+        <CustomComponent values={state} handleChange={handleChange} />
+      )}
+      {!CustomComponent &&
+        formFields?.map((field) => (
+          <CustomFormControl
+            key={field.name}
+            {...field}
+            value={state[field.name]}
+            onChange={handleChange}
+          />
+        ))}
       <RequestFooter handleChange={handleChange} />
       <Button
         mt='3'

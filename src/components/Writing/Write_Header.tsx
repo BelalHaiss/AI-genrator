@@ -7,7 +7,7 @@ type Props = {
 };
 
 export function Write_Header({ label }: Props) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('write');
 
   return (
     <Flex p='4' bg='gray.50' w='full' gap='1' align={'center'}>

@@ -19,6 +19,7 @@ import { AiFillLike } from 'react-icons/ai';
 import { NavCategories } from '@/types/section-nav';
 import { BiTask } from 'react-icons/bi';
 import { FaMicroblog } from 'react-icons/fa';
+import { CustomEmail } from '@/components/Writing/Custom/CustomEmail';
 
 const mainPath = '/write';
 // main text cards start
@@ -168,14 +169,12 @@ export const mailsCards: BoxCard[] = [
       icon: RiMailCheckFill
     },
     service: 'email',
-    formFields: [
-      {
-        name: 'description',
-        label: 'formlabel.email.create',
-        type: 'text',
-        value: ''
-      }
-    ]
+    req_body: {
+      from: '',
+      to: '',
+      description: ''
+    },
+    CustomComponent: CustomEmail
   },
   {
     title: 'emails-message.sms',
@@ -234,7 +233,7 @@ export const adsCards: BoxCard[] = [
     formFields: [
       {
         name: 'description',
-        label: 'formlabel.linkedin.create',
+        label: 'formlabel.google.create',
         type: 'text',
         value: ''
       }

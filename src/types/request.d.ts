@@ -20,14 +20,23 @@ export type Type_With_Undefined<T> = ReturnType<
   }
 >;
 
-export type RequestBody = {
+export interface RequestBody extends Record<RequestKeys, RequestValues> {
   service: RequestServices;
   language: Req_language;
   tone: RequestTone;
   numberOfGenerated: number;
   description: string;
-  [key: RequestKeys]: RequestValues;
-};
+}
+
+// components types start
+export type WriteRequestType = Partial<Type_With_Undefined<RequestBody>>;
+export type handleWriteChange = (
+  name: RequestKeys,
+  value: RequestValues
+) => void;
+
+// components types end
+
 export type Req_language = 'English' | 'Arabic';
 
 export type RequestServices =

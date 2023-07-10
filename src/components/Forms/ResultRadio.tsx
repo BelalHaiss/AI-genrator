@@ -15,6 +15,7 @@ export function SquareRadios({ setValue, value = 1 }: Props) {
   useEffect(() => {
     setValue('numberOfGenerated', selectedValue);
   }, [selectedValue]);
+
   return (
     <FormControl w='90%'>
       <FormLabel>{t('results-counts')}</FormLabel>

@@ -1,5 +1,11 @@
 import { IconType } from 'react-icons/lib';
-import { RequestKeys, RequestServices } from './request';
+import {
+  RequestBody,
+  RequestServices,
+  RequestValues,
+  WriteRequestType,
+  handleWriteChange
+} from './request';
 import { FormField } from './FormControl';
 
 export interface BoxCard<path = string> {
@@ -11,8 +17,14 @@ export interface BoxCard<path = string> {
     icon: IconType;
   };
   tools?: number;
+  // below properties is card with form page
   service?: RequestServices;
-  formFields?: FormField<RequestKeys>[];
+  req_body?: WriteRequestType;
+  formFields?: FormField[];
+  CustomComponent?: React.FunctionComponent<{
+    values: WriteRequestType;
+    handleChange: handleWriteChange;
+  }>;
 }
 
 export interface CardPage {

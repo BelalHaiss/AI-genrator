@@ -1,18 +1,16 @@
-import {
-  RequestBody,
-  RequestServices,
-  Type_With_Undefined
-} from '@/types/request';
+import { RequestServices, WriteRequestType } from '@/types/request';
 import Joi from 'joi';
 
 export const getInitial_state = (
-  service?: RequestServices
-): Type_With_Undefined<RequestBody> => ({
-  service: service ?? '',
+  service: RequestServices,
+  defaults?: WriteRequestType
+): WriteRequestType => ({
+  service: service,
   description: '',
   tone: '',
   numberOfGenerated: 1,
-  language: ''
+  language: '',
+  ...defaults
 });
 
 export const writeSchema = Joi.object({
@@ -20,5 +18,7 @@ export const writeSchema = Joi.object({
   language: Joi.string().valid('English', 'Arabic').required(),
   numberOfGenerated: Joi.number().min(1).max(4).required(),
   service: Joi.string().required(),
-  tone: Joi.string().required()
+  tone: Joi.string().required(),
+  from: Joi.string(),
+  to: Joi.string()
 });
